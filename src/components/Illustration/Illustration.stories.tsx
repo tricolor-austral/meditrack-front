@@ -1,12 +1,23 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Illustrations from './index'; // Ajusta la ruta según la ubicación de tu componente
+import Illustrations from './index';
+import type {StoryObj} from "@storybook/react";
 
-export default {
+
+const meta = {
     title: 'Components/Illustrations',
     component: Illustrations,
+    tags: ['autodocs'],
+    parameters: {
+        controls: {
+            expanded: true,
+        },
+    },
+    args: {
+        variant: 'book',
+        size: 'medium',
+        alt: 'Book icon',
+    },
     argTypes: {
         variant: {
-            control: { type: 'select' },
             options: [
                 'book',
                 'calendar',
@@ -29,36 +40,42 @@ export default {
                 'walk',
                 'warn',
             ],
+            control: { type: 'select' },
         },
         size: {
-            control: { type: 'select' },
             options: ['small', 'medium', 'large'],
+            control: { type: 'select' },
         },
         alt: {
             control: 'text',
         },
     },
-} as ComponentMeta<typeof Illustrations>;
-
-const Template: ComponentStory<typeof Illustrations> = (args) => <Illustrations {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-    variant: 'book',
-    size: 'medium',
-    alt: 'Book icon',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-    variant: 'calendar',
-    size: 'small',
-    alt: 'Calendar icon',
+export default meta;
+type Story = StoryObj<typeof Illustrations>;
+
+// Definición de historias
+export const Default: Story = {
+    args: {
+        variant: 'book',
+        size: 'medium',
+        alt: 'Book icon',
+    },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-    variant: 'check',
-    size: 'large',
-    alt: 'Check icon',
+export const Small: Story = {
+    args: {
+        variant: 'calendar',
+        size: 'small',
+        alt: 'Calendar icon',
+    },
+};
+
+export const Large: Story = {
+    args: {
+        variant: 'check',
+        size: 'large',
+        alt: 'Check icon',
+    },
 };

@@ -1,25 +1,25 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import Book from '../assets/illustrations/book.svg';
-import Calendar from '../assets/illustrations/calendar.svg';
-import Cancel from '../assets/illustrations/cancel.svg';
-import Check from '../assets/illustrations/check.svg';
-import Clock from '../assets/illustrations/clock.svg';
-import ColorStar from '../assets/illustrations/color_star.svg';
-import EpBlack from '../assets/illustrations/ep_black.svg';
-import FilterFilled from '../assets/illustrations/filter_filled.svg';
-import FilterOutlined from '../assets/illustrations/filter_outlined.svg';
-import LeftArrow from '../assets/illustrations/left_arrow.svg';
-import Location from '../assets/illustrations/location.svg';
-import Mail from '../assets/illustrations/mail.svg';
-import Meditate from '../assets/illustrations/meditate.svg';
-import Pill from '../assets/illustrations/pill.svg';
-import PlusSign from '../assets/illustrations/plus_sign.svg';
-import RightArrow from '../assets/illustrations/right_arrow.svg';
-import Star from '../assets/illustrations/star.svg';
-import Trash from '../assets/illustrations/trash.svg';
-import Walk from '../assets/illustrations/walk.svg';
-import Warn from '../assets/illustrations/warn.svg';
+import Book from '../../assets/illustrations/book.svg';
+import Calendar from '../../assets/illustrations/calendar.svg';
+import Cancel from '../../assets/illustrations/cancel.svg';
+import Check from '../../assets/illustrations/check.svg';
+import Clock from '../../assets/illustrations/clock.svg';
+import ColorStar from '../../assets/illustrations/color_star.svg';
+import EpBlack from '../../assets/illustrations/ep_black.svg';
+import FilterFilled from '../../assets/illustrations/filter_filled.svg';
+import FilterOutlined from '../../assets/illustrations/filter_outlined.svg';
+import LeftArrow from '../../assets/illustrations/left_arrow.svg';
+import Location from '../../assets/illustrations/location.svg';
+import Mail from '../../assets/illustrations/mail.svg';
+import Meditate from '../../assets/illustrations/meditate.svg';
+import Pill from '../../assets/illustrations/pill.svg';
+import PlusSign from '../../assets/illustrations/plus_sign.svg';
+import RightArrow from '../../assets/illustrations/right_arrow.svg';
+import Star from '../../assets/illustrations/star.svg';
+import Trash from '../../assets/illustrations/trash.svg';
+import Walk from '../../assets/illustrations/walk.svg';
+import Warn from '../../assets/illustrations/warn.svg';
 
 type IllustrationVariant =
     | 'book'
