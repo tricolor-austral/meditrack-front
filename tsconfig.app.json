@@ -23,9 +23,5 @@
     "noUncheckedSideEffectImports": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src",
-    ".storybook",
-    "src/**/*.stories.tsx"
-  ]
+  "include": ["src", ".storybook", "src/**/*.stories.tsx"]
 }
