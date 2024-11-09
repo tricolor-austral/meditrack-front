@@ -12,57 +12,57 @@ import Star from '../../assets/icons/star.svg';
 import User from '../../assets/icons/user.svg';
 
 type IconVariant =
-    | 'calendar'
-    | 'close'
-    | 'home'
-    | 'logout'
-    | 'prescriptions'
-    | 'property_selected'
-    | 'star'
-    | 'user';
+  | 'calendar'
+  | 'close'
+  | 'home'
+  | 'logout'
+  | 'prescriptions'
+  | 'property_selected'
+  | 'star'
+  | 'user';
 
 const iconMap: Record<IconVariant, string> = {
-    calendar: Calendar,
-    close: Close,
-    home: Home,
-    logout: Logout,
-    prescriptions: Prescriptions,
-    property_selected: PropertySelected,
-    star: Star,
-    user: User,
+  calendar: Calendar,
+  close: Close,
+  home: Home,
+  logout: Logout,
+  prescriptions: Prescriptions,
+  property_selected: PropertySelected,
+  star: Star,
+  user: User,
 };
 
 interface IconProps extends VariantProps<typeof iconStyles> {
-    variant: IconVariant;
-    size?: 'small' | 'medium' | 'large';
-    alt?: string;
+  variant: IconVariant;
+  size?: 'small' | 'medium' | 'large';
+  alt?: string;
 }
 
 const iconStyles = cva('flex items-center justify-center', {
-    variants: {
-        size: {
-            small: 'w-4 h-4',
-            medium: 'w-6 h-6',
-            large: 'w-8 h-8',
-        },
+  variants: {
+    size: {
+      small: 'w-4 h-4',
+      medium: 'w-6 h-6',
+      large: 'w-8 h-8',
     },
-    defaultVariants: {
-        size: 'medium',
-    },
+  },
+  defaultVariants: {
+    size: 'medium',
+  },
 });
 
 const Icon: React.FC<IconProps> = ({ variant, size = 'medium', alt = '' }) => {
-    const iconSrc = iconMap[variant];
+  const iconSrc = iconMap[variant];
 
-    if (!iconSrc) {
-        return null;
-    }
+  if (!iconSrc) {
+    return null;
+  }
 
-    return (
-        <div className={iconStyles({ size })}>
-            <img src={iconSrc} alt={alt || variant} className="w-full h-full" />
-        </div>
-    );
+  return (
+    <div className={iconStyles({ size })}>
+      <img src={iconSrc} alt={alt || variant} className="w-full h-full" />
+    </div>
+  );
 };
 
 export default Icon;

@@ -1,64 +1,63 @@
 import Illustrations from './index';
-import type {StoryObj} from "@storybook/react";
-
+import type { StoryObj } from '@storybook/react';
 
 const meta = {
-    title: 'Components/Illustrations',
-    component: Illustrations,
-    tags: ['autodocs'],
-    parameters: {
-        controls: {
-            expanded: true,
-        },
+  title: 'Components/Illustrations',
+  component: Illustrations,
+  tags: ['autodocs'],
+  parameters: {
+    controls: {
+      expanded: true,
     },
-    args: {
-        variant: 'book',
-        size: 'medium',
-        alt: 'Book icon',
+  },
+  args: {
+    variant: 'book',
+    size: 'medium',
+    alt: 'Book icon',
+  },
+  argTypes: {
+    variant: {
+      options: [
+        'book',
+        'calendar',
+        'cancel',
+        'check',
+        'clock',
+        'color_star',
+        'ep_black',
+        'filter_filled',
+        'filter_outlined',
+        'left_arrow',
+        'location',
+        'mail',
+        'medti',
+        'pill',
+        'plus_sign',
+        'right_arrow',
+        'star',
+        'trash',
+        'walk',
+        'warn',
+      ],
+      control: { type: 'select' },
     },
-    argTypes: {
-        variant: {
-            options: [
-                'book',
-                'calendar',
-                'cancel',
-                'check',
-                'clock',
-                'color_star',
-                'ep_black',
-                'filter_filled',
-                'filter_outlined',
-                'left_arrow',
-                'location',
-                'mail',
-                'medti',
-                'pill',
-                'plus_sign',
-                'right_arrow',
-                'star',
-                'trash',
-                'walk',
-                'warn',
-            ],
-            control: { type: 'select' },
-        },
-        size: {
-            options: ['small', 'medium', 'large'],
-            control: { type: 'select' },
-        },
-        color: {
-            options: ['primary', 'secondary', 'error', 'black', 'white'],
-            control: 'select',
-        },
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
     },
+    color: {
+      options: ['primary', 'secondary', 'error', 'black', 'white'],
+      control: 'select',
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Illustrations>;
 
 export const Default: Story = {
-    args: {
-        variant: 'book',
-        color: 'primary'
-    },
+  args: {
+    variant: 'book',
+    color: 'primary',
+  },
 };

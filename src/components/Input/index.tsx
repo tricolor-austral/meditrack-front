@@ -1,6 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import React from "react";
-import DeleteIcon from "../../assets/delete.svg";
+import React from 'react';
+import DeleteIcon from '../../assets/delete.svg';
 
 interface InputProps extends VariantProps<typeof inputStyles> {
   placeholder?: string;
@@ -13,33 +13,34 @@ interface InputProps extends VariantProps<typeof inputStyles> {
 }
 
 const inputStyles = cva(
-    'rounded transition-all block w-full h-auto px-4 border border-gray-400 focus:border-transparent',
-    {
-  variants: {
-    size: {
-      sm: 'text-sm py-1 max-h-8',
-      md: 'text-md py-2 max-h-10',
-      lg: 'text-lg py-4 max-h-14',
+  'rounded transition-all block w-full h-auto px-4 border border-gray-400 focus:border-transparent',
+  {
+    variants: {
+      size: {
+        sm: 'text-sm py-1 max-h-8',
+        md: 'text-md py-2 max-h-10',
+        lg: 'text-lg py-4 max-h-14',
+      },
+      variant: {
+        primary: 'focus:outline-primary',
+        secondary: 'focus:outline-secondary',
+        error: 'focus:outline-red focus:border-red-500',
+      },
+      disabled: {
+        true: 'opacity-50 cursor-not-allowed',
+        false: '',
+      },
     },
-    variant: {
-      primary: 'focus:outline-primary',
-      secondary: 'focus:outline-secondary',
-      error: 'focus:outline-red focus:border-red-500',
-    },
-    disabled: {
-      true: 'opacity-50 cursor-not-allowed',
-      false: '',
-    },
-  },
-  defaultVariants: {
-    size: 'md',
-    variant: 'secondary',
-    disabled: false,
-    required: false,
-    type: 'text',
-    showIcon: true,
-  } as never,
-});
+    defaultVariants: {
+      size: 'md',
+      variant: 'secondary',
+      disabled: false,
+      required: false,
+      type: 'text',
+      showIcon: true,
+    } as never,
+  }
+);
 
 export const Input: React.FC<InputProps> = ({
   type,
@@ -48,20 +49,20 @@ export const Input: React.FC<InputProps> = ({
   placeholder,
   disabled,
   required,
-    showIcon,
+  showIcon,
 }) => (
-    <div className="relative w-full">
-      <input
-          type={type}
-          className={`${inputStyles({size, disabled, variant})}`}
-          placeholder={placeholder}
-          disabled={disabled}
-          required={required}
-      />
-      {showIcon && (
-          <span className="absolute inset-y-0 right-3 flex items-center cursor-pointer">
-          <img src={DeleteIcon} alt="Clear" className="h-4 w-4"/>
-        </span>
-      )}
-    </div>
+  <div className="relative w-full">
+    <input
+      type={type}
+      className={`${inputStyles({ size, disabled, variant })}`}
+      placeholder={placeholder}
+      disabled={disabled}
+      required={required}
+    />
+    {showIcon && (
+      <span className="absolute inset-y-0 right-3 flex items-center cursor-pointer">
+        <img src={DeleteIcon} alt="Clear" className="h-4 w-4" />
+      </span>
+    )}
+  </div>
 );

@@ -1,36 +1,35 @@
-import {PrescriptionCards} from "./index.tsx";
-import {StoryObj} from "@storybook/react";
-import Typography from "../Typography";
+import { PrescriptionCards } from './index.tsx';
+import { StoryObj } from '@storybook/react';
 
 const meta = {
-    title: 'Components/PrescriptionCards',
-    component: PrescriptionCards,
-    tags: ['autodocs'],
-    parameters: {
-        controls: {
-            expanded: true,
-        },
+  title: 'Components/PrescriptionCards',
+  component: PrescriptionCards,
+  tags: ['autodocs'],
+  parameters: {
+    controls: {
+      expanded: true,
     },
-    argTypes: {
-        variant: {
-            options: ['onDate', 'overdue', 'upcoming'],
-            control: { type: 'select' },
-        },
+  },
+  argTypes: {
+    variant: {
+      options: ['onDate', 'overdue', 'upcoming'],
+      control: { type: 'select' },
     },
-    args: {
-        variant: 'onDate',
-    },
+  },
+  args: {
+    variant: 'onDate',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof PrescriptionCards>;
 
 export const Default: Story = {
-    args: {
-        children: <>
-            <Typography font='br1'>12/10/2024</Typography>
-            <Typography font="subtitle">Prescription Card</Typography>
-        </>,
-    },
+  args: {
+    children: (
+      <>
+        <div>Default Prescription Card</div>
+      </>
+    ),
+  },
 };
-

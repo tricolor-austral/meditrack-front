@@ -21,99 +21,104 @@ import { ReactComponent as Trash } from '../../assets/illustrations/trash.svg';
 import { ReactComponent as Walk } from '../../assets/illustrations/walk.svg';
 import { ReactComponent as Warn } from '../../assets/illustrations/warn.svg';
 
-
 type IllustrationVariant =
-    | 'book'
-    | 'calendar'
-    | 'cancel'
-    | 'check'
-    | 'clock'
-    | 'color_star'
-    | 'ep_black'
-    | 'filter_filled'
-    | 'filter_outlined'
-    | 'left_arrow'
-    | 'location'
-    | 'mail'
-    | 'meditate'
-    | 'pill'
-    | 'plus_sign'
-    | 'right_arrow'
-    | 'star'
-    | 'trash'
-    | 'walk'
-    | 'warn';
-
+  | 'book'
+  | 'calendar'
+  | 'cancel'
+  | 'check'
+  | 'clock'
+  | 'color_star'
+  | 'ep_black'
+  | 'filter_filled'
+  | 'filter_outlined'
+  | 'left_arrow'
+  | 'location'
+  | 'mail'
+  | 'meditate'
+  | 'pill'
+  | 'plus_sign'
+  | 'right_arrow'
+  | 'star'
+  | 'trash'
+  | 'walk'
+  | 'warn';
 
 interface IllustrationsProps extends VariantProps<typeof illustrationStyles> {
-    variant: IllustrationVariant;
-    size?: 'small' | 'medium' | 'large';
-    color?: 'primary' | 'secondary' | 'error' | 'black' | 'white';
+  variant: IllustrationVariant;
+  size?: 'small' | 'medium' | 'large';
+  color?: 'primary' | 'secondary' | 'error' | 'black' | 'white';
 }
 
-const illustrationStyles = cva('flex items-center justify-center align-middle', {
+const illustrationStyles = cva(
+  'flex items-center justify-center align-middle',
+  {
     variants: {
-        size: {
-            small: 'w-8 h-8',
-            medium: 'w-16 h-16',
-            large: 'w-24 h-24',
-        },
-        color: {
-            primary: 'fill-primary',
-            secondary: 'fill-secondary',
-            error: 'fill-error',
-            black: 'fill-black',
-            white: 'fill-white',
-        },
+      size: {
+        small: 'w-8 h-8',
+        medium: 'w-16 h-16',
+        large: 'w-24 h-24',
+      },
+      color: {
+        primary: 'fill-primary',
+        secondary: 'fill-secondary',
+        error: 'fill-error',
+        black: 'fill-black',
+        white: 'fill-white',
+      },
     },
     defaultVariants: {
-        size: 'medium',
+      size: 'medium',
     },
-});
+  }
+);
 
-const Illustrations: React.FC<IllustrationsProps> = ({ variant, size = 'medium', color = 'black' }) => {
-    switch (variant) {
-        case 'book':
-            return <Book className={illustrationStyles({ size, color })} />;
-        case 'calendar':
-            return <Calendar className={illustrationStyles({ size, color })} />;
-        case 'cancel':
-            return <Cancel className={illustrationStyles({ size, color })} />;
-        case 'check':
-            return <Check className={illustrationStyles({ size, color })} />;
-        case 'clock':
-            return <Clock className={illustrationStyles({ size, color })} />;
-        case 'color_star':
-            return <ColorStar className={illustrationStyles({ size, color })} />;
-        case 'ep_black':
-            return <EpBlack className={illustrationStyles({ size, color })} />;
-        case 'filter_filled':
-            return <FilterFilled className={illustrationStyles({ size, color })} />;
-        case 'filter_outlined':
-            return <FilterOutlined className={illustrationStyles({ size, color })} />;
-        case 'left_arrow':
-            return <LeftArrow className={illustrationStyles({ size, color })} />;
-        case 'location':
-            return <Location className={illustrationStyles({ size, color })} />;
-        case 'mail':
-            return <Mail className={illustrationStyles({ size, color })} />;
-        case 'meditate':
-            return <Meditate className={illustrationStyles({ size, color })} />;
-        case 'pill':
-            return <Pill className={illustrationStyles({ size, color })} />;
-        case 'plus_sign':
-            return <PlusSign className={illustrationStyles({ size, color })} />;
-        case 'right_arrow':
-            return <RightArrow className={illustrationStyles({ size, color })} />;
-        case 'star':
-            return <Star className={illustrationStyles({ size, color })} />;
-        case 'trash':
-            return <Trash className={illustrationStyles({ size, color })} />;
-        case 'walk':
-            return <Walk className={illustrationStyles({ size, color })} />;
-        case 'warn':
-            return <Warn className={illustrationStyles({ size, color })} />;
-    }
+const Illustrations: React.FC<IllustrationsProps> = ({
+  variant,
+  size = 'medium',
+  color = 'black',
+}) => {
+  switch (variant) {
+    case 'book':
+      return <Book className={illustrationStyles({ size, color })} />;
+    case 'calendar':
+      return <Calendar className={illustrationStyles({ size, color })} />;
+    case 'cancel':
+      return <Cancel className={illustrationStyles({ size, color })} />;
+    case 'check':
+      return <Check className={illustrationStyles({ size, color })} />;
+    case 'clock':
+      return <Clock className={illustrationStyles({ size, color })} />;
+    case 'color_star':
+      return <ColorStar className={illustrationStyles({ size, color })} />;
+    case 'ep_black':
+      return <EpBlack className={illustrationStyles({ size, color })} />;
+    case 'filter_filled':
+      return <FilterFilled className={illustrationStyles({ size, color })} />;
+    case 'filter_outlined':
+      return <FilterOutlined className={illustrationStyles({ size, color })} />;
+    case 'left_arrow':
+      return <LeftArrow className={illustrationStyles({ size, color })} />;
+    case 'location':
+      return <Location className={illustrationStyles({ size, color })} />;
+    case 'mail':
+      return <Mail className={illustrationStyles({ size, color })} />;
+    case 'meditate':
+      return <Meditate className={illustrationStyles({ size, color })} />;
+    case 'pill':
+      return <Pill className={illustrationStyles({ size, color })} />;
+    case 'plus_sign':
+      return <PlusSign className={illustrationStyles({ size, color })} />;
+    case 'right_arrow':
+      return <RightArrow className={illustrationStyles({ size, color })} />;
+    case 'star':
+      return <Star className={illustrationStyles({ size, color })} />;
+    case 'trash':
+      return <Trash className={illustrationStyles({ size, color })} />;
+    case 'walk':
+      return <Walk className={illustrationStyles({ size, color })} />;
+    case 'warn':
+      return <Warn className={illustrationStyles({ size, color })} />;
+  }
 };
 
 export default Illustrations;
