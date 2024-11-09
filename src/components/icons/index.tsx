@@ -1,4 +1,3 @@
-// components/icons/index.tsx
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
@@ -12,58 +11,57 @@ import Star from '../../assets/icons/star.svg';
 import User from '../../assets/icons/user.svg';
 
 type IconVariant =
-  | 'calendar'
-  | 'close'
-  | 'home'
-  | 'logout'
-  | 'prescriptions'
-  | 'property_selected'
-  | 'star'
-  | 'user';
+    | 'calendar'
+    | 'close'
+    | 'home'
+    | 'logout'
+    | 'prescriptions'
+    | 'property_selected'
+    | 'star'
+    | 'user';
 
-const iconMap: Record<IconVariant, string> = {
-  calendar: Calendar,
-  close: Close,
-  home: Home,
-  logout: Logout,
-  prescriptions: Prescriptions,
-  property_selected: PropertySelected,
-  star: Star,
-  user: User,
+const iconMap: any = {
+    calendar: Calendar,
+    close: Close,
+    home: Home,
+    logout: Logout,
+    prescriptions: Prescriptions,
+    property_selected: PropertySelected,
+    star: Star,
+    user: User,
 };
-
-interface IconProps extends VariantProps<typeof iconStyles> {
-  variant: IconVariant;
-  size?: 'small' | 'medium' | 'large';
-  alt?: string;
-}
 
 const iconStyles = cva('flex items-center justify-center', {
-  variants: {
-    size: {
-      small: 'w-4 h-4',
-      medium: 'w-6 h-6',
-      large: 'w-8 h-8',
+    variants: {
+        size: {
+            small: 'w-4 h-4',
+            medium: 'w-6 h-6',
+            large: 'w-8 h-8',
+        },
     },
-  },
-  defaultVariants: {
-    size: 'medium',
-  },
+    defaultVariants: {
+        size: 'medium',
+    } as const,
 });
 
-const Icon: React.FC<IconProps> = ({ variant, size = 'medium', alt = '' }) => {
-  const iconSrc = iconMap[variant];
+interface IconProps extends VariantProps<typeof iconStyles> {
+    variant: IconVariant;
+    size?: 'small' | 'medium' | 'large'; // Explicitly define size prop type
+    alt?: string;
+}
 
-  if (!iconSrc) {
-    return null;
-  }
+export const Icon: React.FC<IconProps> = ({ variant, size = 'medium', alt = '' }) => {
+    const iconComponent = iconMap[variant];
 
-  return (
-    <div className={iconStyles({ size })}>
-      <img src={iconSrc} alt={alt || variant} className="w-full h-full" />
-    </div>
-  );
+    if (!iconComponent) {
+        return null;
+    }
+
+    return (
+        <div className={iconStyles({ size })} aria-label={alt}>
+            <img src={iconComponent} className="w-full h-full" aria-hidden={alt ? 'false' : 'true'} />
+        </div>
+    );
 };
 
-export default Icon;
 export { iconMap };

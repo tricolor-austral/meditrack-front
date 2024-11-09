@@ -1,7 +1,8 @@
-import Icon from './index';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
+import { Icon } from './index.tsx';
+import '../../index.css';
 
-const meta: Meta<typeof Icon> = {
+const meta = {
   title: 'Components/Icon',
   component: Icon,
   tags: ['autodocs'],
@@ -10,59 +11,49 @@ const meta: Meta<typeof Icon> = {
       expanded: true,
     },
   },
-  args: {
-    variant: 'calendar',
-    size: 'medium',
-    alt: 'Calendar icon',
-  },
-  argTypes: {
-    variant: {
-      options: [
-        'calendar',
-        'close',
-        'home',
-        'logout',
-        'prescriptions',
-        'property_selected',
-        'star',
-        'user',
-      ],
-      control: { type: 'select' },
+    args: {
+        variant: 'calendar',
+        size: 'medium',
+        alt: 'Calendar icon',
     },
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
+    argTypes: {
+        variant: {
+            options: ['calendar', 'close', 'home', 'logout', 'prescriptions', 'property_selected', 'star', 'user'],
+            control: { type: 'select' },
+        },
+        size: {
+            options: ['small', 'medium', 'large'],
+            control: { type: 'select' },
+        },
     },
-    alt: {
-      control: 'text',
-    },
-  },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Icon>;
 
-// Define individual stories
 export const Default: Story = {
-  args: {
-    variant: 'calendar',
-    size: 'medium',
-    alt: 'Calendar icon',
-  },
+    args: {
+        variant: 'calendar',
+        size: 'medium',
+        alt: 'Calendar icon',
+    },
 };
 
-export const Small: Story = {
-  args: {
-    variant: 'close',
-    size: 'small',
-    alt: 'Close icon',
-  },
+export const Close: Story = {
+    args: {
+        variant: 'close',
+        size: 'small',
+        alt: 'Close icon',
+    },
 };
 
-export const Large: Story = {
-  args: {
-    variant: 'home',
-    size: 'large',
-    alt: 'Home icon',
-  },
+export const Home: Story = {
+    args: {
+        variant: 'home',
+        size: 'large',
+        alt: 'Home icon',
+    },
 };
+
+
