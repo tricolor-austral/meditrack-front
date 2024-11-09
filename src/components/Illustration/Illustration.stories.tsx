@@ -46,8 +46,9 @@ const meta = {
             options: ['small', 'medium', 'large'],
             control: { type: 'select' },
         },
-        alt: {
-            control: 'text',
+        color: {
+            options: ['primary', 'secondary', 'error', 'black', 'white'],
+            control: 'select',
         },
     },
 };
@@ -55,27 +56,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Illustrations>;
 
-// Definición de historias
 export const Default: Story = {
     args: {
         variant: 'book',
-        size: 'medium',
-        alt: 'Book icon',
-    },
-};
-
-export const Small: Story = {
-    args: {
-        variant: 'calendar',
-        size: 'small',
-        alt: 'Calendar icon',
-    },
-};
-
-export const Large: Story = {
-    args: {
-        variant: 'check',
-        size: 'large',
-        alt: 'Check icon',
+        color: 'primary'
     },
 };
