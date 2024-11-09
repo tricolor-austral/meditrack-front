@@ -38,6 +38,9 @@ const meta = {
       options: ['text', 'password', 'email', 'number'],
       control: { type: 'select' },
     },
+    showIcon: {
+      control: { type: 'boolean' },
+    },
   },
 };
 
