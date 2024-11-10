@@ -1,33 +1,34 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
-import Calendar from '../../assets/icons/calendar.svg';
-import Close from '../../assets/icons/close.svg';
-import Home from '../../assets/icons/home.svg';
-import Logout from '../../assets/icons/logout.svg';
-import Prescriptions from '../../assets/icons/prescriptions.svg';
-import PropertySelected from '../../assets/icons/property 1=selected.svg';
-import Star from '../../assets/icons/star.svg';
-import User from '../../assets/icons/user.svg';
-import Book from '../../assets/icons/book.svg';
-import Cancel from '../../assets/icons/cancel.svg';
-import Check from '../../assets/icons/check.svg';
-import Clock from '../../assets/icons/clock.svg';
-import ColorStar from '../../assets/icons/color_star.svg';
-import EpBlack from '../../assets/icons/ep_black.svg';
-import FilterFilled from '../../assets/icons/filter_filled.svg';
-import FilterOutlined from '../../assets/icons/filter_outlined.svg';
-import LeftArrow from '../../assets/icons/left_arrow.svg';
-import Location from '../../assets/icons/location.svg';
-import Mail from '../../assets/icons/mail.svg';
-import Meditate from '../../assets/icons/meditate.svg';
-import Pill from '../../assets/icons/pill.svg';
-import PlusSign from '../../assets/icons/plus_sign.svg';
-import RightArrow from '../../assets/icons/right_arrow.svg';
-import Trash from '../../assets/icons/trash.svg';
-import Walk from '../../assets/icons/walk.svg';
-import Warn from '../../assets/icons/warn.svg';
-import Medic from '../../assets/icons/medics.svg';
+import { ReactComponent as Calendar } from '../../assets/icons/calendar.svg';
+import { ReactComponent as Close } from '../../assets/icons/close.svg';
+import { ReactComponent as Home } from '../../assets/icons/home.svg';
+import { ReactComponent as Logout } from '../../assets/icons/logout.svg';
+import { ReactComponent as Prescriptions } from '../../assets/icons/prescriptions.svg';
+import { ReactComponent as PropertySelected } from '../../assets/icons/property 1=selected.svg';
+import { ReactComponent as Star } from '../../assets/icons/star.svg';
+import { ReactComponent as User } from '../../assets/icons/user.svg';
+import { ReactComponent as Book } from '../../assets/icons/book.svg';
+import { ReactComponent as Cancel } from '../../assets/icons/cancel.svg';
+import { ReactComponent as Check } from '../../assets/icons/check.svg';
+import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
+import { ReactComponent as ColorStar } from '../../assets/icons/color_star.svg';
+import { ReactComponent as EpBlack } from '../../assets/icons/ep_black.svg';
+import { ReactComponent as FilterFilled } from '../../assets/icons/filter_filled.svg';
+import { ReactComponent as FilterOutlined } from '../../assets/icons/filter_outlined.svg';
+import { ReactComponent as LeftArrow } from '../../assets/icons/left_arrow.svg';
+import { ReactComponent as Location } from '../../assets/icons/location.svg';
+import { ReactComponent as Mail } from '../../assets/icons/mail.svg';
+import { ReactComponent as Meditate } from '../../assets/icons/meditate.svg';
+import { ReactComponent as Pill } from '../../assets/icons/pill.svg';
+import { ReactComponent as PlusSign } from '../../assets/icons/plus_sign.svg';
+import { ReactComponent as RightArrow } from '../../assets/icons/right_arrow.svg';
+import { ReactComponent as Trash } from '../../assets/icons/trash.svg';
+import { ReactComponent as Walk } from '../../assets/icons/walk.svg';
+import { ReactComponent as Warn } from '../../assets/icons/warn.svg';
+import { ReactComponent as Medic } from '../../assets/icons/medics.svg';
+
 
 type IconVariant =
   | 'calendar'
@@ -88,30 +89,38 @@ const iconMap: any = {
     medic: Medic,
 };
 
-const iconStyles = cva('flex items-center justify-center', {
+const iconStyles = cva('flex items-center align-middle', {
   variants: {
     size: {
-      small: 'w-4 h-4',
-      medium: 'w-6 h-6',
-      large: 'w-8 h-8',
+      small: 'w-6 h-6',
+      medium: 'w-8 h-8',
+      large: 'w-12 h-12',
+    },
+    color: {
+      primary: 'text-primary',
+      secondary: 'text-secondary',
+      error: 'text-red',
+      warn: 'text-yellow',
+      black: 'text-black',
+      white: 'text-white',
     },
   },
   defaultVariants: {
     size: 'medium',
-  } as const,
+    color: 'black',
+  },
 });
 
 interface IconProps extends VariantProps<typeof iconStyles> {
   variant: IconVariant;
   size?: 'small' | 'medium' | 'large';
-  alt?: string;
-  color?: string;
+  color?: 'primary' | 'secondary' | 'error' | 'warn' | 'black' | 'white';
 }
 
 export const Icon: React.FC<IconProps> = ({
   variant,
   size = 'medium',
-  alt = '',
+  color = 'black',
 }) => {
   const IconComponent = iconMap[variant];
 
@@ -119,16 +128,10 @@ export const Icon: React.FC<IconProps> = ({
     return null;
   }
 
-  return (
-    <div className={iconStyles({ size })} aria-label={alt}>
-      <img
-        src={IconComponent}
-        className="w-full h-full"
-        alt={alt}
-        aria-hidden={alt ? 'false' : 'true'}
-      />
-    </div>
-  );
+  return (<div className={iconStyles({size ,color})}>
+          <IconComponent className='w-full h-full' color='yellow'/>
+        </div>);
+
 };
 
 export { iconMap };

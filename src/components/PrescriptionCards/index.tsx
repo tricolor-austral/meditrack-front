@@ -7,9 +7,9 @@ const prescriptionCards = cva(
   {
     variants: {
       variant: {
-        onDate: 'border-secondary text-secondary',
-        overdue: 'border-red text-red',
-        upcoming: 'border-yellow-500 text-yellow-500',
+        onDate: 'border-secondary text-primary',
+        overdue: 'border-red text-primary',
+        upcoming: 'border-yellow text-primary',
       },
     },
   }
@@ -35,7 +35,7 @@ const cardData = (variant: string, children: React.ReactNode) => {
       <>
         {children}
         <div className={'text-secondary'}>
-          <Icon variant="check" />
+          <Icon variant="check" color='secondary'/>
         </div>
       </>
     );
@@ -44,14 +44,14 @@ const cardData = (variant: string, children: React.ReactNode) => {
     return (
       <>
         {children}
-        <Icon variant="cancel" />
+        <Icon variant="cancel" color='error'/>
       </>
     );
   } else {
     return (
       <>
         {children}
-        <Icon variant="warn" />
+        <Icon variant="warn" color='warn'/>
       </>
     );
   }
