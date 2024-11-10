@@ -1,8 +1,8 @@
 import Avatar from '@mui/material/Avatar';
 import { Title } from '../Title';
 import { Text } from '../Text';
-import React from "react";
-import {Icon} from "../icons";
+import React from 'react';
+import { Icon } from '../icons';
 
 interface MedicCardProps {
   name: string;

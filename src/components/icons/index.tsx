@@ -27,6 +27,7 @@ import RightArrow from '../../assets/icons/right_arrow.svg';
 import Trash from '../../assets/icons/trash.svg';
 import Walk from '../../assets/icons/walk.svg';
 import Warn from '../../assets/icons/warn.svg';
+import Medic from '../../assets/icons/medics.svg';
 
 type IconVariant =
   | 'calendar'
@@ -54,6 +55,7 @@ type IconVariant =
   | 'right_arrow'
   | 'trash'
   | 'walk'
+    | 'medic'
   | 'warn';
 
 const iconMap: any = {
@@ -83,6 +85,7 @@ const iconMap: any = {
   trash: Trash,
   walk: Walk,
   warn: Warn,
+    medic: Medic,
 };
 
 const iconStyles = cva('flex items-center justify-center', {
