@@ -1,59 +1,60 @@
-import { cva } from 'class-variance-authority';
-import { Title } from '../Title';
-import { Text } from '../Text';
+import {cva} from 'class-variance-authority';
 import React from 'react';
-import { Icon } from '../icons';
+import {Icon} from '../Icons';
+import {Title} from '../Title';
+import {Text} from '../Text';
 
 const ActivityStyle = cva(
-  'bg-white border-2 rounded-2xl flex justify-between p-2 items-center',
-  {
-    variants: {
-      color: {
-        primary: 'border-primary',
-        secondary: 'border-secondary',
-        failure: 'border-red',
-      },
-    },
-  }
+    'bg-white border-2 rounded-lg flex justify-between p-1 items-center', // Reduced padding
+    {
+        variants: {
+            color: {
+                primary: 'border-primary',
+                secondary: 'border-secondary',
+                failure: 'border-red',
+            },
+        },
+    }
 );
 
-const IllustrationStyle = cva('p-2 rounded-lg', {
-  variants: {
-    color: {
-      primary: 'bg-primary',
-      secondary: 'bg-secondary',
-      failure: 'bg-red',
+const IllustrationStyle = cva('p-1 rounded-md', {
+    variants: {
+        color: {
+            primary: 'bg-primary',
+            secondary: 'bg-secondary',
+            failure: 'bg-red',
+        },
     },
-  },
 });
 
 interface ActivityProps {
-  color: 'primary' | 'secondary' | 'failure';
-  illustrationVariant: any;
-  title: string;
-  time: string;
-  unit: string;
+    color: 'primary' | 'secondary' | 'failure',
+    illustrationVariant: any,
+    title: string,
+    time: string,
+    unit: string,
+    className?: string
 }
 
 export const Activity: React.FC<ActivityProps> = ({
-  color,
-  illustrationVariant,
-  title,
-  time,
-  unit,
-}) => {
-  return (
-    <div className={ActivityStyle({ color })}>
-      <div className="flex p-2 gap-2 items-center">
-        <div className={IllustrationStyle({ color })}>
-          <Icon variant={illustrationVariant} size="small" color="white" />
+                                                      color,
+                                                      illustrationVariant,
+                                                      title,
+                                                      time,
+                                                      unit
+                                                  }) => {
+    return (
+        <div className={ActivityStyle({color})}>
+            <div className="flex p-1 gap-1 items-center">
+                <div className={IllustrationStyle({color})}>
+                    <Icon variant={illustrationVariant} size="small" color="white"/> {/* Small icon */}
+                </div>
+                <Title order="h4" className="text-sm">{title}</Title> {/* Smaller font */}
+            </div>
+            <div className="flex gap-1 items-baseline text-sm"> {/* Smaller font */}
+                <Title order="h4" className="text-lg">{time}</Title>
+                <Text variant="body3">{unit}</Text>
+            </div>
         </div>
-        <Title order="h1">{title}</Title>
-      </div>
-      <div className="flex gap-2 items-baseline">
-        <Title order="h1">{time}</Title>
-        <Text variant="body1Bold">{unit}</Text>
-      </div>
-    </div>
-  );
+    );
 };
