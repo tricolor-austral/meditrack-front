@@ -1,15 +1,15 @@
 import { cva } from 'class-variance-authority';
-import Illustrations from '../Illustration';
 import React from 'react';
+import {Icon} from "../icons";
 
 const prescriptionCards = cva(
-  'rounded-b-md border-2 rounded-tr-md bg-white shadow-md flex justify-between align-middle px-[18px] py-[20px] text-primary',
+  'rounded-md border-2 bg-white shadow-md flex justify-between align-middle px-[18px] py-[20px] text-black',
   {
     variants: {
       variant: {
-        onDate: 'border-secondary',
-        overdue: 'border-red',
-        upcoming: 'border-yellow-300',
+        onDate: 'border-secondary text-secondary',
+        overdue: 'border-red text-red',
+        upcoming: 'border-yellow-500 text-yellow-500',
       },
     },
   }
@@ -35,7 +35,7 @@ const cardData = (variant: string, children: React.ReactNode) => {
       <>
         {children}
         <div className={'text-secondary'}>
-          <Illustrations variant="check" />
+          <Icon variant="check" />
         </div>
       </>
     );
@@ -44,14 +44,14 @@ const cardData = (variant: string, children: React.ReactNode) => {
     return (
       <>
         {children}
-        <Illustrations variant="cancel" />
+        <Icon variant="cancel" />
       </>
     );
   } else {
     return (
       <>
         {children}
-        <Illustrations variant="warn" />
+        <Icon variant="warn" />
       </>
     );
   }

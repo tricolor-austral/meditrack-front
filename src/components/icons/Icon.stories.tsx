@@ -11,21 +11,48 @@ const meta = {
       expanded: true,
     },
   },
-    args: {
-        variant: 'calendar',
-        size: 'medium',
-        alt: 'Calendar icon',
+  args: {
+    variant: 'calendar',
+    size: 'medium',
+    alt: 'Calendar icon',
+  },
+  argTypes: {
+    variant: {
+      options: [
+        'calendar',
+        'close',
+        'home',
+        'logout',
+        'prescriptions',
+        'property_selected',
+        'star',
+        'user',
+        'book',
+        'cancel',
+        'check',
+        'clock',
+        'color_star',
+        'ep_black',
+        'filter_filled',
+        'filter_outlined',
+        'left_arrow',
+        'location',
+        'mail',
+        'meditate',
+        'pill',
+        'plus_sign',
+        'right_arrow',
+        'trash',
+        'walk',
+        'warn',
+      ],
+      control: { type: 'select' },
     },
-    argTypes: {
-        variant: {
-            options: ['calendar', 'close', 'home', 'logout', 'prescriptions', 'property_selected', 'star', 'user'],
-            control: { type: 'select' },
-        },
-        size: {
-            options: ['small', 'medium', 'large'],
-            control: { type: 'select' },
-        },
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
     },
+  },
 };
 
 export default meta;
@@ -33,27 +60,25 @@ export default meta;
 type Story = StoryObj<typeof Icon>;
 
 export const Default: Story = {
-    args: {
-        variant: 'calendar',
-        size: 'medium',
-        alt: 'Calendar icon',
-    },
+  args: {
+    variant: 'calendar',
+    size: 'medium',
+    alt: 'Calendar icon',
+  },
 };
 
 export const Close: Story = {
-    args: {
-        variant: 'close',
-        size: 'small',
-        alt: 'Close icon',
-    },
+  args: {
+    variant: 'close',
+    size: 'small',
+    alt: 'Close icon',
+  },
 };
 
 export const Home: Story = {
-    args: {
-        variant: 'home',
-        size: 'large',
-        alt: 'Home icon',
-    },
+  args: {
+    variant: 'home',
+    size: 'large',
+    alt: 'Home icon',
+  },
 };
-
-
