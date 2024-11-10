@@ -35,7 +35,7 @@ const cardData = (variant: string, children: React.ReactNode) => {
       <>
         {children}
         <div className={'text-secondary'}>
-          <Icon variant="check" color='secondary'/>
+          <Icon variant="check" color="secondary" />
         </div>
       </>
     );
@@ -44,14 +44,14 @@ const cardData = (variant: string, children: React.ReactNode) => {
     return (
       <>
         {children}
-        <Icon variant="cancel" color='error'/>
+        <Icon variant="cancel" color="error" />
       </>
     );
   } else {
     return (
       <>
         {children}
-        <Icon variant="warn" color='warn'/>
+        <Icon variant="warn" color="warn" />
       </>
     );
   }

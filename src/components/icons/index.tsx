@@ -29,7 +29,6 @@ import { ReactComponent as Walk } from '../../assets/icons/walk.svg';
 import { ReactComponent as Warn } from '../../assets/icons/warn.svg';
 import { ReactComponent as Medic } from '../../assets/icons/medics.svg';
 
-
 type IconVariant =
   | 'calendar'
   | 'close'
@@ -56,7 +55,7 @@ type IconVariant =
   | 'right_arrow'
   | 'trash'
   | 'walk'
-    | 'medic'
+  | 'medic'
   | 'warn';
 
 const iconMap: any = {
@@ -86,7 +85,7 @@ const iconMap: any = {
   trash: Trash,
   walk: Walk,
   warn: Warn,
-    medic: Medic,
+  medic: Medic,
 };
 
 const iconStyles = cva('flex items-center align-middle', {
@@ -96,25 +95,16 @@ const iconStyles = cva('flex items-center align-middle', {
       medium: 'w-8 h-8',
       large: 'w-12 h-12',
     },
-    color: {
-      primary: 'text-primary',
-      secondary: 'text-secondary',
-      error: 'text-red',
-      warn: 'text-yellow',
-      black: 'text-black',
-      white: 'text-white',
-    },
   },
   defaultVariants: {
     size: 'medium',
     color: 'black',
-  },
+  } as never,
 });
 
 interface IconProps extends VariantProps<typeof iconStyles> {
   variant: IconVariant;
-  size?: 'small' | 'medium' | 'large';
-  color?: 'primary' | 'secondary' | 'error' | 'warn' | 'black' | 'white';
+  color?: string;
 }
 
 export const Icon: React.FC<IconProps> = ({
@@ -128,10 +118,11 @@ export const Icon: React.FC<IconProps> = ({
     return null;
   }
 
-  return (<div className={iconStyles({size ,color})}>
-          <IconComponent className='w-full h-full' color='yellow'/>
-        </div>);
-
+  return (
+    <div className={iconStyles({ size })}>
+      <IconComponent className="w-full h-full" color={color} />
+    </div>
+  );
 };
 
 export { iconMap };

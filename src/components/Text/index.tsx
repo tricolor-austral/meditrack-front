@@ -19,11 +19,15 @@ const textStyles = cva('', {
 interface TextProps extends VariantProps<typeof textStyles> {
   children: React.ReactNode;
   props?: React.HTMLProps<HTMLParagraphElement>;
-
 }
 
-export const Text: React.FC<TextProps> = ({ children, variant, className = '', props }) => (
-    <p {...props} className={`${textStyles({ variant })} ${className}`}>
-      {children}
-    </p>
+export const Text: React.FC<TextProps> = ({
+  children,
+  variant,
+  className = '',
+  props,
+}) => (
+  <p {...props} className={`${textStyles({ variant })} ${className}`}>
+    {children}
+  </p>
 );
