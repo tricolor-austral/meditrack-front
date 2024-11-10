@@ -1,6 +1,6 @@
-import {PrescriptionCards} from './index.tsx';
-import {StoryObj} from '@storybook/react';
-import {Title} from "../Title";
+import { PrescriptionCards } from './index.tsx';
+import { StoryObj } from '@storybook/react';
+import { Title } from '../Title';
 
 const meta = {
   title: 'Components/PrescriptionCards',
@@ -20,10 +20,10 @@ const meta = {
   args: {
     variant: 'onDate',
     children: (
-        <>
-          <Title order='h2'>24/08/2025</Title>
-          <Title order='h2'>Paracetamol</Title>
-        </>
+      <>
+        <Title order="h2">24/08/2025</Title>
+        <Title order="h2">Paracetamol</Title>
+      </>
     ),
   },
 };
@@ -35,10 +35,10 @@ export const Default: Story = {
   args: {
     variant: 'onDate',
     children: (
-        <>
-          <Title order='h2'>24/08/2025</Title>
-          <Title order='h2'>Paracetamol</Title>
-        </>
+      <>
+        <Title order="h2">24/08/2025</Title>
+        <Title order="h2">Paracetamol</Title>
+      </>
     ),
   },
 };

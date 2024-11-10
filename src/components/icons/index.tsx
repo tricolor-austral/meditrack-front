@@ -1,7 +1,6 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
-
 import Calendar from '../../assets/icons/calendar.svg';
 import Close from '../../assets/icons/close.svg';
 import Home from '../../assets/icons/home.svg';
@@ -10,7 +9,7 @@ import Prescriptions from '../../assets/icons/prescriptions.svg';
 import PropertySelected from '../../assets/icons/property 1=selected.svg';
 import Star from '../../assets/icons/star.svg';
 import User from '../../assets/icons/user.svg';
-import Book from "../../assets/icons/book.svg";
+import Book from '../../assets/icons/book.svg';
 import Cancel from '../../assets/icons/cancel.svg';
 import Check from '../../assets/icons/check.svg';
 import Clock from '../../assets/icons/clock.svg';

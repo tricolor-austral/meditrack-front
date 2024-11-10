@@ -4,7 +4,7 @@ const config: {
   webpackFinal: (config) => Promise<any>;
   stories: string[];
   framework: { name: string; options: {} };
-  addons: string[]
+  addons: string[];
 } = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -20,7 +20,7 @@ const config: {
   webpackFinal: async (config) => {
     // Find and remove Storybook's default SVG rule
     const fileLoaderRule = config.module.rules.find((rule) =>
-        rule.test?.test('.svg')
+      rule.test?.test('.svg')
     );
     if (fileLoaderRule) {
       fileLoaderRule.exclude = /\.svg$/;

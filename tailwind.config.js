@@ -22,7 +22,7 @@ export default {
         },
         black: '#090808',
         red: '#EE6055',
-        yellow: '#FFE100'
+        yellow: '#FFE100',
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],

@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 import React from 'react';
-import {Icon} from "../icons";
+import { Icon } from '../icons';
 
 const prescriptionCards = cva(
   'rounded-md border-2 bg-white shadow-md flex justify-between align-middle px-[18px] py-[20px] text-black',
