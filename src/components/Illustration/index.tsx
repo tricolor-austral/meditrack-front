@@ -19,7 +19,7 @@ import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 import WarningIcon from '@mui/icons-material/Warning';
 
 // Tipo de variantes de iconos
-type IllustrationVariant =
+export type IllustrationVariant =
     | 'book'
     | 'calendar'
     | 'cancel'
