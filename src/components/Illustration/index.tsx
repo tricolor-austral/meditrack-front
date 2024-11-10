@@ -1,124 +1,127 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { ReactComponent as Book } from '../../assets/illustrations/book.svg';
-import { ReactComponent as Calendar } from '../../assets/illustrations/calendar.svg';
-import { ReactComponent as Cancel } from '../../assets/illustrations/cancel.svg';
-import { ReactComponent as Check } from '../../assets/illustrations/check.svg';
-import { ReactComponent as Clock } from '../../assets/illustrations/clock.svg';
-import { ReactComponent as ColorStar } from '../../assets/illustrations/color_star.svg';
-import { ReactComponent as EpBlack } from '../../assets/illustrations/ep_black.svg';
-import { ReactComponent as FilterFilled } from '../../assets/illustrations/filter_filled.svg';
-import { ReactComponent as FilterOutlined } from '../../assets/illustrations/filter_outlined.svg';
-import { ReactComponent as LeftArrow } from '../../assets/illustrations/left_arrow.svg';
-import { ReactComponent as Location } from '../../assets/illustrations/location.svg';
-import { ReactComponent as Mail } from '../../assets/illustrations/mail.svg';
-import { ReactComponent as Meditate } from '../../assets/illustrations/meditate.svg';
-import { ReactComponent as Pill } from '../../assets/illustrations/pill.svg';
-import { ReactComponent as PlusSign } from '../../assets/illustrations/plus_sign.svg';
-import { ReactComponent as RightArrow } from '../../assets/illustrations/right_arrow.svg';
-import { ReactComponent as Star } from '../../assets/illustrations/star.svg';
-import { ReactComponent as Trash } from '../../assets/illustrations/trash.svg';
-import { ReactComponent as Walk } from '../../assets/illustrations/walk.svg';
-import { ReactComponent as Warn } from '../../assets/illustrations/warn.svg';
 
+// Importar iconos de Material Icons
+import BookIcon from '@mui/icons-material/Book';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import CancelIcon from '@mui/icons-material/Cancel';
+import CheckIcon from '@mui/icons-material/Check';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import StarIcon from '@mui/icons-material/Star';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
+import MedicationIcon from '@mui/icons-material/Medication';
+import AddIcon from '@mui/icons-material/Add';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
+import WarningIcon from '@mui/icons-material/Warning';
+
+// Tipo de variantes de iconos
 type IllustrationVariant =
-  | 'book'
-  | 'calendar'
-  | 'cancel'
-  | 'check'
-  | 'clock'
-  | 'color_star'
-  | 'ep_black'
-  | 'filter_filled'
-  | 'filter_outlined'
-  | 'left_arrow'
-  | 'location'
-  | 'mail'
-  | 'meditate'
-  | 'pill'
-  | 'plus_sign'
-  | 'right_arrow'
-  | 'star'
-  | 'trash'
-  | 'walk'
-  | 'warn';
+    | 'book'
+    | 'calendar'
+    | 'cancel'
+    | 'check'
+    | 'clock'
+    | 'color_star'
+    | 'filter_filled'
+    | 'filter_outlined'
+    | 'left_arrow'
+    | 'location'
+    | 'mail'
+    | 'pill'
+    | 'plus_sign'
+    | 'right_arrow'
+    | 'star'
+    | 'trash'
+    | 'walk'
+    | 'warn';
 
 interface IllustrationsProps extends VariantProps<typeof illustrationStyles> {
   variant: IllustrationVariant;
   size?: 'small' | 'medium' | 'large';
-  color?: 'primary' | 'secondary' | 'error' | 'black' | 'white';
+  color?: 'primary' | 'secondary' | 'error' | 'warn' | 'black' | 'white';
 }
 
-const illustrationStyles = cva(
-  'flex items-center justify-center align-middle',
-  {
-    variants: {
-      size: {
-        small: 'w-8 h-8',
-        medium: 'w-16 h-16',
-        large: 'w-24 h-24',
-      },
-      color: {
-        primary: 'fill-primary',
-        secondary: 'fill-secondary',
-        error: 'fill-error',
-        black: 'fill-black',
-        white: 'fill-white',
-      },
+// Estilos del componente
+const illustrationStyles = cva('flex items-center justify-center align-middle', {
+  variants: {
+    size: {
+      small: 'w-8 h-8',
+      medium: 'w-16 h-16',
+      large: 'w-24 h-24',
     },
-    defaultVariants: {
-      size: 'medium',
+    color: {
+      primary: 'text-primary',
+      secondary: 'text-secondary',
+      error: 'text-red',
+      warn: 'text-yellow',
+      black: 'text-black',
+      white: 'text-white',
     },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'medium',
+    color: 'black',
+  },
+});
 
+// Componente principal
 const Illustrations: React.FC<IllustrationsProps> = ({
-  variant,
-  size = 'medium',
-  color = 'black',
-}) => {
-  switch (variant) {
-    case 'book':
-      return <Book className={illustrationStyles({ size, color })} />;
-    case 'calendar':
-      return <Calendar className={illustrationStyles({ size, color })} />;
-    case 'cancel':
-      return <Cancel className={illustrationStyles({ size, color })} />;
-    case 'check':
-      return <Check className={illustrationStyles({ size, color })} />;
-    case 'clock':
-      return <Clock className={illustrationStyles({ size, color })} />;
-    case 'color_star':
-      return <ColorStar className={illustrationStyles({ size, color })} />;
-    case 'ep_black':
-      return <EpBlack className={illustrationStyles({ size, color })} />;
-    case 'filter_filled':
-      return <FilterFilled className={illustrationStyles({ size, color })} />;
-    case 'filter_outlined':
-      return <FilterOutlined className={illustrationStyles({ size, color })} />;
-    case 'left_arrow':
-      return <LeftArrow className={illustrationStyles({ size, color })} />;
-    case 'location':
-      return <Location className={illustrationStyles({ size, color })} />;
-    case 'mail':
-      return <Mail className={illustrationStyles({ size, color })} />;
-    case 'meditate':
-      return <Meditate className={illustrationStyles({ size, color })} />;
-    case 'pill':
-      return <Pill className={illustrationStyles({ size, color })} />;
-    case 'plus_sign':
-      return <PlusSign className={illustrationStyles({ size, color })} />;
-    case 'right_arrow':
-      return <RightArrow className={illustrationStyles({ size, color })} />;
-    case 'star':
-      return <Star className={illustrationStyles({ size, color })} />;
-    case 'trash':
-      return <Trash className={illustrationStyles({ size, color })} />;
-    case 'walk':
-      return <Walk className={illustrationStyles({ size, color })} />;
-    case 'warn':
-      return <Warn className={illustrationStyles({ size, color })} />;
-  }
+   variant,
+   size = 'medium',
+   color = 'black',
+  }) => {
+  const IconComponent = () => {
+    switch (variant) {
+      case 'book':
+        return <BookIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'calendar':
+        return <CalendarTodayIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'cancel':
+        return <CancelIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'check':
+        return <CheckIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'clock':
+        return <AccessTimeIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'color_star':
+        return <StarIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'filter_filled':
+        return <FilterAltIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'filter_outlined':
+        return <FilterAltIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'left_arrow':
+        return <ArrowRightAltIcon style={{ transform: 'rotate(180deg)' }} sx={{ width: '100%', height: '100%' }}/>;
+      case 'location':
+        return <LocationOnIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'mail':
+        return <EmailIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'pill':
+        return <MedicationIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'plus_sign':
+        return <AddIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'right_arrow':
+        return <ArrowRightAltIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'star':
+        return <StarIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'trash':
+        return <DeleteIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'walk':
+        return <DirectionsWalkIcon sx={{ width: '100%', height: '100%' }}/>;
+      case 'warn':
+        return <WarningIcon sx={{ width: '100%', height: '100%' }}/>;
+      default:
+        return null;
+    }
+  };
+
+  return (
+      <div className={illustrationStyles({ size, color })}>
+        <IconComponent />
+      </div>
+  );
 };
 
 export default Illustrations;
