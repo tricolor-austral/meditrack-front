@@ -39,7 +39,7 @@ const HomePage = () => {
         <div className="p-2 max-w-md mx-auto bg-gray-50 min-h-screen">
             <header className="flex justify-between items-center mb-2 px-6">
                 <img src={Logo} alt="Logo" className="h-8" />
-                <div className="text-center flex-grow">
+                <div className="text-center flex-grow mb-4">
                     <Title order="h2">Hey, John!</Title>
                     <Text variant="body1">Upcoming schedule</Text>
                 </div>
