@@ -6,10 +6,10 @@ import { Text } from '../components/Text';
 
 const medics = [
     { name: 'Lisa Track', specialty: 'Nutritionist' },
-    { name: 'Lisa Track', specialty: 'Nutritionist' },
-    { name: 'Lisa Track', specialty: 'Nutritionist' },
-    { name: 'Lisa Track', specialty: 'Nutritionist' },
-    { name: 'Lisa Track', specialty: 'Nutritionist' },
+    { name: 'Emily Brown', specialty: 'Dermatologist' },
+    { name: 'James Wilson', specialty: 'Pediatrician' },
+    { name: 'Olivia Martinez', specialty: 'Psychiatrist' },
+    { name: 'Noah Lee', specialty: 'Ophthalmologist' },
 ];
 
 const MedicsPage: React.FC = () => {

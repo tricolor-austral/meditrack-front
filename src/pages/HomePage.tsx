@@ -37,9 +37,9 @@ const HomePage = () => {
 
     return (
         <div className="p-2 max-w-md mx-auto bg-gray-50 min-h-screen">
-            <header className="flex justify-between items-center mb-2 px-6">
+            <header className="flex items-center justify-between px-6 mb-4">
                 <img src={Logo} alt="Logo" className="h-8" />
-                <div className="text-center flex-grow mb-4">
+                <div className="text-center flex-grow">
                     <Title order="h2">Hey, John!</Title>
                     <Text variant="body1">Upcoming schedule</Text>
                 </div>
@@ -61,7 +61,7 @@ const HomePage = () => {
                         key={date.value}
                         variant={selectedDate === date.value ? 'filled' : 'outlined'}
                         onClick={() => setSelectedDate(date.value)}
-                        className="w-[85px] h-[75px]"
+                        className="w-[85px] h-[75px] cursor-pointer"
                     >
                         <Text variant="body3Bold">{date.label}</Text>
                     </DateCards>
@@ -81,6 +81,7 @@ const HomePage = () => {
                     />
                 ))}
             </section>
+
             <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-2 flex justify-center">
                 <Navbar options={navbarOptions} selected={selectedTab} onChange={setSelectedTab} />
             </footer>

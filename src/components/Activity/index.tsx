@@ -1,8 +1,8 @@
-import {cva} from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import React from 'react';
-import {Icon} from '../Icons';
-import {Title} from '../Title';
-import {Text} from '../Text';
+import { Icon } from '../Icons';
+import { Title } from '../Title';
+import { Text } from '../Text';
 
 const ActivityStyle = cva(
     'bg-white border-2 rounded-lg flex justify-between p-1 items-center', // Reduced padding
@@ -28,12 +28,12 @@ const IllustrationStyle = cva('p-1 rounded-md', {
 });
 
 interface ActivityProps {
-    color: 'primary' | 'secondary' | 'failure',
-    illustrationVariant: any,
-    title: string,
-    time: string,
-    unit: string,
-    className?: string
+    color: 'primary' | 'secondary' | 'failure';
+    illustrationVariant: any;
+    title: string;
+    time: string;
+    unit: string;
+    className?: string;
 }
 
 export const Activity: React.FC<ActivityProps> = ({
@@ -41,13 +41,13 @@ export const Activity: React.FC<ActivityProps> = ({
                                                       illustrationVariant,
                                                       title,
                                                       time,
-                                                      unit
+                                                      unit,
                                                   }) => {
     return (
-        <div className={ActivityStyle({color})}>
-            <div className="flex p-1 gap-1 items-center">
-                <div className={IllustrationStyle({color})}>
-                    <Icon variant={illustrationVariant} size="small" color="white"/> {/* Small icon */}
+        <div className={ActivityStyle({ color })}>
+            <div className="flex p-1 gap-3 items-center"> {/* Increased gap to 3 */}
+                <div className={IllustrationStyle({ color })}>
+                    <Icon variant={illustrationVariant} size="small" color="white" /> {/* Small icon */}
                 </div>
                 <Title order="h4" className="text-sm">{title}</Title> {/* Smaller font */}
             </div>
