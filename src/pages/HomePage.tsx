@@ -23,21 +23,20 @@ const HomePage = () => {
         { color: 'primary' as const, icon: 'walk', title: 'Run', time: '10', unit: 'min' },
         { color: 'secondary' as const, icon: 'pill', title: 'Roacutan', time: '1', unit: 'pill' },
         { color: 'failure' as const, icon: 'meditate', title: 'Meditation', time: '15', unit: 'min' },
-        { color: 'failure' as const, icon: 'meditate', title: 'Meditation', time: '15', unit: 'min' },
-        { color: 'secondary' as const, icon: 'pill', title: 'Roacutan', time: '1', unit: 'pill' },
-        { color: 'primary' as const, icon: 'walk', title: 'Run', time: '10', unit: 'min' },
-        { color: 'primary' as const, icon: 'walk', title: 'Run', time: '10', unit: 'min' },
+        { color: 'primary' as const, icon: 'walk', title: 'Walk', time: '30', unit: 'min' },
+        { color: 'secondary' as const, icon: 'pill', title: 'Vitamin D', time: '1', unit: 'pill' },
+        { color: 'failure' as const, icon: 'meditate', title: 'Yoga', time: '45', unit: 'min' },
     ];
 
     const navbarOptions = [
-        { label: 'Home', icon: 'home' },
-        { label: 'Medics', icon: 'medic' },
-        { label: 'Prescriptions', icon: 'prescriptions' },
-        { label: 'Calendar', icon: 'calendar' },
+        { label: 'Home', icon: 'home' as const },
+        { label: 'Medics', icon: 'medic' as const },
+        { label: 'Prescriptions', icon: 'prescriptions' as const },
+        { label: 'Calendar', icon: 'calendar' as const },
     ];
 
     return (
-        <div className="p-2 max-w-md mx-auto bg-gray-50 min-h-screen">
+        <div className="mt-10 p-2 max-w-md mx-auto bg-gray-50 min-h-screen">
             <header className="flex justify-between items-center mb-2 px-6">
                 <img src={Logo} alt="Logo" className="h-8" />
                 <div className="text-center flex-grow">
@@ -69,7 +68,7 @@ const HomePage = () => {
                 ))}
             </section>
 
-            <section className="px-4 mb-4">
+            <section className="px-4 mb-4 flex flex-col gap-3">
                 {activities.map((activity, index) => (
                     <Activity
                         key={index}
@@ -82,7 +81,6 @@ const HomePage = () => {
                     />
                 ))}
             </section>
-
             <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-2 flex justify-center">
                 <Navbar options={navbarOptions} selected={selectedTab} onChange={setSelectedTab} />
             </footer>
