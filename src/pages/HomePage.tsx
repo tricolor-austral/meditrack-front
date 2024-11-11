@@ -47,7 +47,7 @@ const HomePage = () => {
             </header>
 
             <div className="bg-primary rounded-lg p-4 flex items-center gap-4 mx-4 mb-4 cursor-pointer">
-                <Icon variant="medic" size="large" color="white"/>
+                <Icon variant="medic" size="large" color="white" className="relative top-3"/>
                 <div className="text-base">
                     <Text variant="body1Bold" className="text-lg">Raymond Shaw</Text>
                     <Text variant="body1" className="text-base">Cardiologist</Text>
