@@ -46,12 +46,12 @@ const HomePage = () => {
                 <img src={LogoutIcon} alt="Logout" className="h-6 cursor-pointer" />
             </header>
 
-            <div className="bg-primary rounded-lg p-3 flex items-center gap-3 mx-4 mb-4 cursor-pointer">
-                <Icon variant="medic" size="medium" color="white" />
-                <div className="text-sm">
-                    <Text variant="body2Bold">Dr. Raymond Shaw</Text>
-                    <Text variant="body2">Cardiologist</Text>
-                    <Text variant="body2">Nov 24, 9:00 AM</Text>
+            <div className="bg-primary rounded-lg p-4 flex items-center gap-4 mx-4 mb-4 cursor-pointer">
+                <Icon variant="medic" size="large" color="white"/>
+                <div className="text-base">
+                    <Text variant="body1Bold" className="text-lg">Raymond Shaw</Text>
+                    <Text variant="body1" className="text-base">Cardiologist</Text>
+                    <Text variant="body1" className="text-sm">Nov 24, 9:00 AM</Text>
                 </div>
             </div>
 

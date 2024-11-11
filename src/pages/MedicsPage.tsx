@@ -36,10 +36,8 @@ const MedicsPage: React.FC = () => {
                 <h1 className="text-2xl font-semibold">Medics</h1>
             </header>
 
-            {/* Tabs for Favorites and Search */}
             <Tabs options={tabs} selected={selectedTab} onChange={setSelectedTab} />
 
-            {/* Search Bar */}
             <div className="relative mt-4 mb-6 flex items-center">
                 <input
                     type="text"
@@ -49,7 +47,6 @@ const MedicsPage: React.FC = () => {
                     className="w-full pl-4 pr-10 py-2 rounded-lg border border-gray-300 focus:outline-none bg-gray-100 text-gray-700"
                 />
 
-                {/* Filter icon outside the search bar */}
                 <Icon
                     variant="filter_outlined"
                     size="small"
@@ -58,7 +55,6 @@ const MedicsPage: React.FC = () => {
                 />
             </div>
 
-            {/* List of Medics */}
             <div className="space-y-3 px-4">
                 {medics.map((medic, index) => (
                     <div
@@ -75,7 +71,6 @@ const MedicsPage: React.FC = () => {
                 ))}
             </div>
 
-            {/* Navbar */}
             <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-2 flex justify-center">
                 <Navbar options={navbarOptions} selected={navbarTab} onChange={setNavbarTab}/>
             </footer>

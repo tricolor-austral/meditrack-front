@@ -5,7 +5,7 @@ import { Title } from '../Title';
 import { Text } from '../Text';
 
 const ActivityStyle = cva(
-    'bg-white border-2 rounded-lg flex justify-between p-1 items-center cursor-pointer', // Added cursor-pointer
+    'bg-white border-2 rounded-lg flex justify-between p-1 items-center cursor-pointer',
     {
         variants: {
             color: {
@@ -45,13 +45,13 @@ export const Activity: React.FC<ActivityProps> = ({
                                                   }) => {
     return (
         <div className={ActivityStyle({ color })}>
-            <div className="flex p-1 gap-3 items-center"> {/* Increased gap to 3 */}
+            <div className="flex p-1 gap-3 items-center">
                 <div className={IllustrationStyle({ color })}>
-                    <Icon variant={illustrationVariant} size="small" color="white" /> {/* Small icon */}
+                    <Icon variant={illustrationVariant} size="small" color="white" />
                 </div>
-                <Title order="h4" className="text-sm">{title}</Title> {/* Smaller font */}
+                <Title order="h4" className="text-sm">{title}</Title>
             </div>
-            <div className="flex gap-1 items-baseline text-sm"> {/* Smaller font */}
+            <div className="flex gap-1 items-baseline text-sm">
                 <Title order="h4" className="text-lg">{time}</Title>
                 <Text variant="body3">{unit}</Text>
             </div>
