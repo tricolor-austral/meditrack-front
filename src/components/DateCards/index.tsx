@@ -1,8 +1,8 @@
-import {cva} from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import React from 'react';
 
 const DateCardsStyles = cva(
-    'border-2 flex flex-col justify-center items-center rounded-md w-[83px] h-[69px]',
+    'border-2 flex flex-col justify-center items-center rounded-md w-[83px] h-[69px] cursor-pointer',  // Added cursor-pointer here
     {
         variants: {
             variant: {
@@ -14,14 +14,14 @@ const DateCardsStyles = cva(
 );
 
 interface DateCardsProps {
-    variant: 'filled' | 'outlined',
-    children: React.ReactNode,
-    onClick?: () => void,
-    className?: string
+    variant: 'filled' | 'outlined';
+    children: React.ReactNode;
+    onClick?: () => void;
+    className?: string;
 }
 
-export const DateCards: React.FC<DateCardsProps> = ({variant, children, onClick}) => (
-    <div className={DateCardsStyles({variant})} onClick={onClick}>
+export const DateCards: React.FC<DateCardsProps> = ({ variant, children, onClick }) => (
+    <div className={DateCardsStyles({ variant })} onClick={onClick}>
         {children}
     </div>
 );
