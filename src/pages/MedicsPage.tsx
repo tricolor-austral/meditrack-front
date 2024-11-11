@@ -40,13 +40,21 @@ const MedicsPage: React.FC = () => {
             <Tabs options={tabs} selected={selectedTab} onChange={setSelectedTab} />
 
             {/* Search Bar */}
-            <div className="relative mt-4 mb-6">
+            <div className="relative mt-4 mb-6 flex items-center">
                 <input
                     type="text"
                     placeholder="Search"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-10 py-2 rounded-lg border border-gray-300 focus:outline-none bg-gray-100 text-gray-700"
+                    className="w-full pl-4 pr-10 py-2 rounded-lg border border-gray-300 focus:outline-none bg-gray-100 text-gray-700"
+                />
+
+                {/* Filter icon outside the search bar */}
+                <Icon
+                    variant="filter_outlined"
+                    size="small"
+                    color="gray"
+                    className="ml-2 cursor-pointer"
                 />
             </div>
 
@@ -64,8 +72,6 @@ const MedicsPage: React.FC = () => {
                         </div>
                         <Icon variant="right_arrow" size="small" className="text-gray-400"/>
                     </div>
-
-
                 ))}
             </div>
 
