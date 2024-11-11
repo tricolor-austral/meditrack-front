@@ -57,19 +57,21 @@ const MedicsPage: React.FC = () => {
                         key={index}
                         className="flex items-center p-3 rounded-lg shadow-sm bg-white cursor-pointer"
                     >
-                        <Icon variant="medic" size="small" color="gray" className="mr-4" />
-                        <div className="flex-1">
+                        <Icon variant="medic" size="small" color="gray" className="mr-4"/>
+                        <div className="flex flex-col flex-1">
                             <Text className="font-medium text-black">{medic.name}</Text>
                             <Text className="text-sm text-gray-500">{medic.specialty}</Text>
                         </div>
-                        <Icon variant="right_arrow" size="small" className="text-gray-400" />
+                        <Icon variant="right_arrow" size="small" className="text-gray-400"/>
                     </div>
+
+
                 ))}
             </div>
 
             {/* Navbar */}
             <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-2 flex justify-center">
-                <Navbar options={navbarOptions} selected={navbarTab} onChange={setNavbarTab} />
+                <Navbar options={navbarOptions} selected={navbarTab} onChange={setNavbarTab}/>
             </footer>
         </div>
     );
