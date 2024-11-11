@@ -5,7 +5,7 @@ import { Title } from '../Title';
 import { Text } from '../Text';
 
 const ActivityStyle = cva(
-    'bg-white border-2 rounded-lg flex justify-between p-1 items-center', // Reduced padding
+    'bg-white border-2 rounded-lg flex justify-between p-1 items-center cursor-pointer', // Added cursor-pointer
     {
         variants: {
             color: {

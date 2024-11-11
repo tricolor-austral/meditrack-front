@@ -38,7 +38,7 @@ const HomePage = () => {
     return (
         <div className="p-2 max-w-md mx-auto bg-gray-50 min-h-screen">
             <header className="flex items-center justify-between px-6 mb-4">
-                <img src={Logo} alt="Logo" className="h-8" />
+                <img src={Logo} alt="Logo" className="h-8 cursor-pointer" />
                 <div className="text-center flex-grow">
                     <Title order="h2">Hey, John!</Title>
                     <Text variant="body1">Upcoming schedule</Text>
@@ -46,7 +46,7 @@ const HomePage = () => {
                 <img src={LogoutIcon} alt="Logout" className="h-6 cursor-pointer" />
             </header>
 
-            <div className="bg-primary rounded-lg p-3 flex items-center gap-3 mx-4 mb-4">
+            <div className="bg-primary rounded-lg p-3 flex items-center gap-3 mx-4 mb-4 cursor-pointer">
                 <Icon variant="medic" size="medium" color="white" />
                 <div className="text-sm">
                     <Text variant="body2Bold">Dr. Raymond Shaw</Text>
