@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Icon } from "../Icons";
 import { Text } from "../Text";
 
@@ -8,19 +9,26 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ options, selected, onChange }: NavbarProps) => {
+    const navigate = useNavigate();
+
+    const handleNavigation = (label: string) => {
+        onChange(label);
+        if (label === 'Home') {
+            navigate('/');
+        } else if (label === 'Medics') {
+            navigate('/medics');
+        }
+    };
+
     return (
         <div className="flex w-full p-3 bg-white gap-3 justify-around max-w-[400px]">
             {options.map((option) => (
                 <div
                     key={option.label}
-                    onClick={() => onChange(option.label)}
+                    onClick={() => handleNavigation(option.label)}
                     className="flex flex-col justify-center items-center cursor-pointer"
                 >
-                    <Icon
-                        variant={option.icon}
-                        size="small"
-                        color={selected === option.label ? 'text-primary' : 'text-black'}
-                    />
+                    <Icon variant={option.icon} size="small" color={selected === option.label ? 'text-primary' : 'text-black'} />
                     <Text variant="body4" className={`text-[8px] font-light ${selected === option.label ? 'text-primary' : 'text-black'}`}>
                         {option.label}
                     </Text>

@@ -103,7 +103,7 @@ const iconStyles = cva('flex items-center align-middle', {
 
 interface IconProps extends VariantProps<typeof iconStyles> {
     variant: IconVariant;
-    color?: string; // Expecting a Tailwind color class like 'text-primary'
+    color?: string; // Tailwind color class like 'text-primary'
     className?: string;
 }
 
