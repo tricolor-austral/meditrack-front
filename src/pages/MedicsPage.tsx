@@ -3,6 +3,7 @@ import { Tabs } from '../components/Tabs';
 import { Navbar } from '../components/Navbar';
 import FavoritesPage from './FavoritesPage';
 import SearchPage from './SearchPage';
+import {Title} from "../components/Title";
 
 const MedicsPage: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState('Favorites');
@@ -22,10 +23,9 @@ const MedicsPage: React.FC = () => {
 
   return (
     <div className="p-4 max-w-md mx-auto bg-gray-50 min-h-screen">
-      <header className="text-center mb-4">
-        <h1 className="text-2xl font-semibold">Medics</h1>
-      </header>
-
+        <div className={'flex justify-center mb-2'}>
+            <Title order={'h1'}>Medics</Title>
+        </div>
       <Tabs options={tabs} selected={selectedTab} onChange={setSelectedTab} />
 
       {selectedTab === 'Favorites' ? <FavoritesPage /> : <SearchPage />}

@@ -11,9 +11,6 @@ const meta = {
       expanded: true,
     },
   },
-  args: {
-    variant: 'body1Bold',
-  },
   argTypes: {
     variant: {
       options: [
@@ -27,6 +24,9 @@ const meta = {
         'body4Bold',
       ],
       control: { type: 'select' },
+    },
+    color: {
+      control: { type: 'color' },
     },
   },
 };

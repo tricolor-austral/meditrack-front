@@ -33,7 +33,6 @@ export const Default: (args) => React.JSX.Element = (args) => {
 
   const handleChange = (value: string) => {
     setSelected(value);
-    args.onChange(value);
   };
 
   return <Navbar {...args} selected={selected} onChange={handleChange} />;
