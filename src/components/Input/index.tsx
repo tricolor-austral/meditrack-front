@@ -13,7 +13,7 @@ interface InputProps extends VariantProps<typeof inputStyles> {
 }
 
 const inputStyles = cva(
-  'rounded transition-all block w-full h-auto px-4 border border-gray-400 focus:border-transparent',
+  'rounded transition-all block w-full h-auto px-4 border rounded-[10px] bg-gray-200 focus:border-transparent',
   {
     variants: {
       size: {

@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { Icon } from '../components/Icons';
-import { Text } from '../components/Text';
+import {MedicContact} from "../components/MedicContact";
+import {MedicOption} from "../components/MedicOption";
+import {Input} from "../components/Input";
+import {Icon} from "../components/icons";
 
 const medics = [
-  { name: 'Liza Trays', email: 'lizatrass@mail.com' },
-  { name: 'Alexia Spielberg', email: 'ale@mail.com' },
-  { name: 'Deyverson', email: 'deyverson@mail.com' },
-  { name: 'Liam Johnson', email: 'liam.johnson@mail.com' },
-  { name: 'Michael Brown', email: 'michael.brown@mail.com' },
+  { name: 'Liza Trays', email: 'lizatrass@mail.com', specialty: 'Cardiologist' },
+  { name: 'Ale Spielb', email: 'ale@mail.com', specialty: 'Neurologist' },
+  { name: 'Deyverson', email: 'deyverson@mail.com', specialty: 'Pediatrician' },
+  { name: 'Liam Johnson', email: 'l.johnson@mail.com', specialty: 'Orthopedic' },
+  { name: 'Michael Brown', email: 'm..brown@mail.com', specialty: 'Dermatologist' },
+  { name: 'Liza Trays', email: 'lizatrass@mail.com', specialty: 'Cardiologist' },
+  { name: 'Ale Spielb', email: 'ale@mail.com', specialty: 'Neurologist' },
+  { name: 'Deyverson', email: 'deyverson@mail.com', specialty: 'Pediatrician' },
+  { name: 'Liam Johnson', email: 'l.johnson@mail.com', specialty: 'Orthopedic' },
+  { name: 'Michael Brown', email: 'm..brown@mail.com', specialty: 'Dermatologist' },
 ];
+
 
 const SearchPage: React.FC = () => {
   const [searchTerm] = useState('');
@@ -19,29 +27,24 @@ const SearchPage: React.FC = () => {
   );
 
   return (
-    <div className="space-y-4 px-4 mt-4"> {/* Margin applied here */}
-      {filteredMedics.map((medic, index) => (
-        <div
-          key={index}
-          className="flex items-center p-4 rounded-lg shadow-sm bg-white cursor-pointer gap-4"
-        >
-          <Icon variant="medic" size="large" color="primary" className="mr-4 relative top-3" />
-
-          <div className="flex flex-col flex-1">
-            <Text className="font-medium text-black">{medic.name}</Text>
-            <div className="flex items-center text-sm text-gray-500 gap-2">
-              <Icon variant="mail" size="small" color="text-primary-dark" />
-              <Text>{medic.email}</Text>
-            </div>
+      <div>
+        <div className="space-y-4 mt-4"> {/* Margin applied here */}
+          <div className="flex items-center gap-2">
+            <Input
+                placeholder="Search"
+                value={searchTerm}
+                onChange={() => {}}
+                showIcon
+            />
+            <Icon variant={'filter_outlined'} className={'mt-2'} onClick={() => {}}/>
           </div>
-
-          <div className="flex gap-3">
-            <Icon variant="calendar" size="small" color="text-primary-dark" />
-            <Icon variant="trash" size="small" color="text-primary-dark" />
+          <div className={'max-h-[600px] overflow-scroll flex-col gap-4 flex'}>
+            {filteredMedics.map((medic, index) => (
+                <MedicOption name={medic.name} imgSrc={''}  specialty={medic.specialty}/>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
+      </div>
   );
 };
 
