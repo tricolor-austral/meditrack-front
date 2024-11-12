@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Icon } from '../components/Icons';
-import { Text } from '../components/Text';
 import {Input} from "../components/Input";
 import {MedicContact} from "../components/MedicContact";
 

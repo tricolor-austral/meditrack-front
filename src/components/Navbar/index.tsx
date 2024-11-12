@@ -26,10 +26,14 @@ export const Navbar = ({ options, selected, onChange }: NavbarProps) => {
                 <div
                     key={option.label}
                     onClick={() => handleNavigation(option.label)}
-                    className="flex flex-col justify-center items-center cursor-pointer"
+                    className="flex flex-col justify-center gap-1 items-center cursor-pointer"
                 >
                     <Icon variant={option.icon} size="small" color={selected === option.label ? 'text-primary' : 'text-black'} />
-                    <Text variant="body4" className={`text-[8px] font-light ${selected === option.label ? 'text-primary' : 'text-black'}`}>
+                    <Text
+                        variant="body2"
+                        color={selected === option.label && '#61A5C2'}
+                        className={`text-[8px] font-light ${selected === option.label ? 'text-primary' : 'text-black'}`}
+                    >
                         {option.label}
                     </Text>
                 </div>
