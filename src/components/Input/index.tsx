@@ -3,13 +3,15 @@ import React from 'react';
 import DeleteIcon from '../../assets/delete.svg';
 
 interface InputProps extends VariantProps<typeof inputStyles> {
-  placeholder?: string;
-  disabled?: boolean;
-  type?: 'text' | 'password' | 'email' | 'number';
-  size?: 'sm' | 'md' | 'lg';
-  required?: boolean;
-  variant?: 'primary' | 'secondary' | 'error';
-  showIcon?: boolean;
+  placeholder?: string,
+  disabled?: boolean,
+  type?: 'text' | 'password' | 'email' | 'number',
+  size?: 'sm' | 'md' | 'lg',
+  required?: boolean,
+  variant?: 'primary' | 'secondary' | 'error',
+  showIcon?: boolean,
+  value?: string,
+  onChange?: () => void
 }
 
 const inputStyles = cva(
@@ -39,18 +41,18 @@ const inputStyles = cva(
       type: 'text',
       showIcon: true,
     } as never,
-  }
+  },
 );
 
 export const Input: React.FC<InputProps> = ({
-  type,
-  size,
-  variant,
-  placeholder,
-  disabled,
-  required,
-  showIcon,
-}) => (
+                                              type,
+                                              size,
+                                              variant,
+                                              placeholder,
+                                              disabled,
+                                              required,
+                                              showIcon,
+                                            }) => (
   <div className="relative w-full">
     <input
       type={type}
