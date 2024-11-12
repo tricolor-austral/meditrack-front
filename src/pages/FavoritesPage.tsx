@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Icon } from '../components/Icons';
 import { Text } from '../components/Text';
+import {Input} from "../components/Input";
+import {MedicContact} from "../components/MedicContact";
 
 const medics = [
-  { name: 'Lisa Track', specialty: 'Nutritionist' },
-  { name: 'Emily Brown', specialty: 'Dermatologist' },
-  { name: 'James Wilson', specialty: 'Pediatrician' },
-  { name: 'Olivia Martinez', specialty: 'Psychiatrist' },
-  { name: 'Noah Lee', specialty: 'Ophthalmologist' },
+    { name: 'Liza Trays', email: 'lizatrass@mail.com', specialty: 'Cardiologist' },
+    { name: 'Ale Spielb', email: 'ale@mail.com', specialty: 'Neurologist' },
+    { name: 'Liam Johnson', email: 'l.johnson@mail.com', specialty: 'Orthopedic' },
+    { name: 'Michael Brown', email: 'm..brown@mail.com', specialty: 'Dermatologist' },
+    { name: 'Liza Trays', email: 'lizatrass@mail.com', specialty: 'Cardiologist' },
+    { name: 'Ale Spielb', email: 'ale@mail.com', specialty: 'Neurologist' },
+    { name: 'Liam Johnson', email: 'l.johnson@mail.com', specialty: 'Orthopedic' },
+    { name: 'Michael Brown', email: 'm..brown@mail.com', specialty: 'Dermatologist' },
 ];
-
 const FavoritesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -19,38 +23,23 @@ const FavoritesPage: React.FC = () => {
   );
 
   return (
-    <div>
-      <div className="relative mt-4 mb-6 flex items-center">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-4 pr-10 py-2 rounded-lg border border-gray-300 focus:outline-none bg-gray-100 text-gray-700"
-        />
-        <Icon
-          variant="filter_outlined"
-          size="small"
-          color="gray"
-          className="ml-2 cursor-pointer"
-        />
-      </div>
-
-      <div className="space-y-3 px-4">
-        {filteredMedics.map((medic, index) => (
-          <div
-            key={index}
-            className="flex items-center p-3 rounded-lg shadow-sm bg-white cursor-pointer"
-          >
-            <Icon variant="medic" size="small" color="gray" className="mr-4"/>
-            <div className="flex flex-col flex-1">
-              <Text className="font-medium text-black">{medic.name}</Text>
-              <Text className="text-sm text-gray-500">{medic.specialty}</Text>
-            </div>
-            <Icon variant="right_arrow" size="small" className="text-gray-400"/>
-          </div>
-        ))}
-      </div>
+    <div className="space-y-4 mt-4">
+        <div className="flex items-center gap-2">
+            <Input
+                placeholder="Search"
+                value={searchTerm}
+                onChange={() => {
+                }}
+                showIcon
+            />
+            <Icon variant={'filter_outlined'} className={'mt-2'} onClick={() => {
+            }}/>
+        </div>
+        <div className={'max-h-[600px] overflow-scroll flex-col gap-4 flex mb-[80px]'}>
+            {filteredMedics.map((medic, index) => (
+                <MedicContact name={medic.name} email={medic.email} imgSrc={''}/>
+            ))}
+        </div>
     </div>
   );
 };

@@ -4,18 +4,20 @@ import {MedicOption} from "../components/MedicOption";
 import {Input} from "../components/Input";
 import {Icon} from "../components/icons";
 
+
 const medics = [
-  { name: 'Liza Trays', email: 'lizatrass@mail.com', specialty: 'Cardiologist' },
-  { name: 'Ale Spielb', email: 'ale@mail.com', specialty: 'Neurologist' },
-  { name: 'Deyverson', email: 'deyverson@mail.com', specialty: 'Pediatrician' },
-  { name: 'Liam Johnson', email: 'l.johnson@mail.com', specialty: 'Orthopedic' },
-  { name: 'Michael Brown', email: 'm..brown@mail.com', specialty: 'Dermatologist' },
-  { name: 'Liza Trays', email: 'lizatrass@mail.com', specialty: 'Cardiologist' },
-  { name: 'Ale Spielb', email: 'ale@mail.com', specialty: 'Neurologist' },
-  { name: 'Deyverson', email: 'deyverson@mail.com', specialty: 'Pediatrician' },
-  { name: 'Liam Johnson', email: 'l.johnson@mail.com', specialty: 'Orthopedic' },
-  { name: 'Michael Brown', email: 'm..brown@mail.com', specialty: 'Dermatologist' },
+  { name: 'Lisa Track', specialty: 'Nutritionist' },
+  { name: 'Emily Brown', specialty: 'Dermatologist' },
+  { name: 'James Wilson', specialty: 'Pediatrician' },
+  { name: 'Olivia Martinez', specialty: 'Psychiatrist' },
+  { name: 'Noah Lee', specialty: 'Ophthalmologist' },
+  { name: 'Lisa Track', specialty: 'Nutritionist' },
+  { name: 'Emily Brown', specialty: 'Dermatologist' },
+  { name: 'James Wilson', specialty: 'Pediatrician' },
+  { name: 'Olivia Martinez', specialty: 'Psychiatrist' },
+  { name: 'Noah Lee', specialty: 'Ophthalmologist' },
 ];
+
 
 
 const SearchPage: React.FC = () => {
@@ -38,7 +40,7 @@ const SearchPage: React.FC = () => {
             />
             <Icon variant={'filter_outlined'} className={'mt-2'} onClick={() => {}}/>
           </div>
-          <div className={'max-h-[600px] overflow-scroll flex-col gap-4 flex'}>
+          <div className={'max-h-[600px] overflow-scroll flex-col gap-4 flex mb-[80px]'}>
             {filteredMedics.map((medic, index) => (
                 <MedicOption name={medic.name} imgSrc={''}  specialty={medic.specialty}/>
             ))}

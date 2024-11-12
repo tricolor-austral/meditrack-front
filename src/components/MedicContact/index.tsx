@@ -24,7 +24,7 @@ export const MedicContact: React.FC<MedicContactProps> = ({
           <div className="p-0.5 bg-blue-100 rounded-md">
             <Icon variant="mail" size="small" color="primary" />
           </div>
-          <Text className="text-sm text-gray-500">{email}</Text>
+          <Text color={'gray'} className="text-sm text-gray-500">{email}</Text>
         </div>
       </div>
       <div className="flex gap-2">
