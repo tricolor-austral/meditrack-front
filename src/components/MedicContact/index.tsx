@@ -17,7 +17,7 @@ export const MedicContact: React.FC<MedicContactProps> = ({
 }) => {
   return (
     <div className="flex items-center p-4 bg-white rounded-xl shadow-md space-x-4">
-      <Avatar src={imgSrc} alt={name} className="w-16 h-16 rounded-md" />
+      <Avatar sx={{width: '80px', height: '80px'}} src={imgSrc} alt={name} className="w-36 h-36 rounded-md" />
       <div className="flex-1">
         <Title className="text-lg font-bold text-gray-800">{name}</Title>
         <div className="flex items-center space-x-2 mt-1">
@@ -27,12 +27,12 @@ export const MedicContact: React.FC<MedicContactProps> = ({
           <Text color={'gray'} className="text-sm text-gray-500">{email}</Text>
         </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2">
         <div className="p-2 bg-blue-100 rounded-md">
-          <Icon variant="calendar" size="small" color="primary" />
+          <Icon variant="calendar" size="small" color="text-primary-dark" />
         </div>
         <div className="p-2 bg-blue-100 rounded-md">
-          <Icon variant="trash" size="small" color="primary" />
+          <Icon variant="trash" size="small" color="text-primary-dark" />
         </div>
       </div>
     </div>

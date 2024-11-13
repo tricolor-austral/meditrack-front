@@ -47,11 +47,11 @@ export const Activity: React.FC<ActivityProps> = ({
         <div className={ActivityStyle({ color })}>
             <div className="flex p-1 gap-3 items-center">
                 <div className={IllustrationStyle({ color })}>
-                    <Icon variant={illustrationVariant} size="small" color="white" />
+                    <Icon variant={illustrationVariant} size="small" color="text-white" />
                 </div>
                 <Title order="h4" className="text-sm">{title}</Title>
             </div>
-            <div className="flex gap-1 items-baseline text-sm">
+            <div className="flex gap-1 items-baseline text-sm mr-1">
                 <Title order="h4" className="text-lg">{time}</Title>
                 <Text variant="body3">{unit}</Text>
             </div>

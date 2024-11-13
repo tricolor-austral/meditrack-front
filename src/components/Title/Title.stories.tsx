@@ -13,11 +13,14 @@ const meta = {
   },
   args: {
     order: 'h1',
+    color: 'black',
   },
   argTypes: {
     order: {
       options: ['h1', 'h2', 'h3', 'h4'],
-      control: { type: 'select' },
+    },
+    color: {
+      control: { type: 'color' },
     },
   },
 };

@@ -30,7 +30,7 @@ const MedicsPage: React.FC = () => {
 
       {selectedTab === 'Favorites' ? <FavoritesPage /> : <SearchPage />}
 
-      <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-2 flex justify-center">
+      <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg flex justify-center">
         <Navbar options={navbarOptions} selected={navbarTab} onChange={setNavbarTab}/>
       </footer>
     </div>

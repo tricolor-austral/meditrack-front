@@ -4,19 +4,20 @@ import React from 'react';
 const titleStyles = cva('', {
     variants: {
         order: {
-            h1: 'text-2xl font-bold',
-            h2: 'text-xl font-bold',
-            h3: 'text-lg font-medium',
-            h4: 'text-md font-light',
+            h1: 'text-3xl font-light',
+            h2: 'text-2xl font-light',
+            h3: 'text-xl font-light',
+            h4: 'text-lg font-light',
         },
     },
 });
 
 interface TitleProps extends VariantProps<typeof titleStyles> {
     children: React.ReactNode,
-    className?: string
+    className?: string,
+    color?: string,
 }
 
-export const Title: React.FC<TitleProps> = ({children, order}) => (
-    <p className={titleStyles({order})}>{children}</p>
+export const Title: React.FC<TitleProps> = ({children, order, color = 'black' }) => (
+    <p style={{color: color}} className={titleStyles({order})}>{children}</p>
 );

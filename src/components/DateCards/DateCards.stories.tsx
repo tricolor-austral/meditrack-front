@@ -16,15 +16,17 @@ const meta = {
       options: ['filled', 'outlined'],
       control: { type: 'select' },
     },
+    day: {
+      control: { type: 'text' },
+    },
+    date: {
+      control: { type: 'text' },
+    },
   },
   args: {
     variant: 'filled',
-    children: (
-      <>
-        <Text variant="body2">Mon</Text>
-        <Text variant="body2">16/09</Text>
-      </>
-    ),
+    day: 'Mon',
+    date: '16/09',
   },
 };
 
