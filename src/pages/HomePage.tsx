@@ -7,6 +7,7 @@ import { Text } from '../components/Text';
 import { Icon } from '../components/Icons';
 import Logo from '../assets/logo.svg';
 import {UpcomingCard} from "../components/UpcomingCard";
+import d2 from '../assets/doctors/d2.svg';
 
 const HomePage = () => {
     const [selectedTab, setSelectedTab] = useState('Home');
@@ -49,7 +50,12 @@ const HomePage = () => {
                 <Icon variant={'logout'} />
             </header>
             <Text variant="body1">Upcoming schedule</Text>
-            <UpcomingCard />
+            <UpcomingCard
+                name={'Dr. John Doe'}
+                speciality={'Dermatologist'}
+                date={'10:00 AM'}
+                imgSrc={d2}
+            />
             <section className="flex justify-between mb-4 gap-2 max-w-[90vw] overflow-scroll">
                 {dateOptions.map((date) => (
                     <DateCards
