@@ -8,6 +8,10 @@ const titleStyles = cva('', {
             h2: 'text-2xl font-light',
             h3: 'text-xl font-light',
             h4: 'text-lg font-light',
+            h1Bold: 'text-3xl font-bold',
+            h2Bold: 'text-2xl font-bold',
+            h3Bold: 'text-xl font-bold',
+            h4Bold: 'text-lg font-bold',
         },
     },
 });

@@ -6,19 +6,18 @@ import { Title } from '../components/Title';
 import { Text } from '../components/Text';
 import { Icon } from '../components/Icons';
 import Logo from '../assets/logo.svg';
-import Clock from '../assets/icons/clock.svg';
-import Avatar from "@mui/material/Avatar";
-import d3 from '../assets/doctors/d3.svg';
+import {UpcomingCard} from "../components/UpcomingCard";
 
 const HomePage = () => {
     const [selectedTab, setSelectedTab] = useState('Home');
-    const [selectedDate, setSelectedDate] = useState('Mon 16/09');
+    const [selectedDate, setSelectedDate] = useState('Wed 18/09');
 
     const dateOptions = [
         { day: 'Mon', date: '16/09', value: 'Mon 16/09' },
         { day: 'Tue', date: '17/09', value: 'Tue 17/09' },
         { day: 'Wed', date: '18/09', value: 'Wed 18/09' },
         { day: 'Thu', date: '19/09', value: 'Thu 19/09' },
+        { day: 'Fri', date: '20/09', value: 'Fri 20/09' },
     ];
 
     const activities = [
@@ -50,21 +49,8 @@ const HomePage = () => {
                 <Icon variant={'logout'} />
             </header>
             <Text variant="body1">Upcoming schedule</Text>
-            <div className="bg-secondary rounded-lg p-4 flex items-center gap-4 mb-4 mt-2 cursor-pointer justify-between">
-                <div className="text-base flex flex-col gap-2">
-                    <Text color={'white'} variant="body1Bold">Dr. Raymond Shaw</Text>
-                    <Text color={'white'} variant="body2">Cardiologist</Text>
-                    <div className="flex gap-2 px-2 rounded-md items-center bg-white">
-                        <img style={{height: '12px'}} src={Clock} alt={''}/>
-                        <Text color={'gray'}  variant="body1">Nov 24, 9:00 AM</Text>
-                    </div>
-                </div>
-                <div>
-                    <Avatar src={d3} alt="Avatar" sx={{ width: 80, height: 80 }} />
-                </div>
-            </div>
-
-            <section className="flex justify-between mb-4 gap-2">
+            <UpcomingCard />
+            <section className="flex justify-between mb-4 gap-2 max-w-[90vw] overflow-scroll">
                 {dateOptions.map((date) => (
                     <DateCards
                         key={date.value}

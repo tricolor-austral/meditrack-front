@@ -3,7 +3,7 @@ import React from 'react';
 import { Text } from '../Text';
 
 const DateCardsStyles = cva(
-    'border-2 flex flex-col items-center justify-evenly items-center rounded-md w-[83px] h-[69px] cursor-pointer',  // Added cursor-pointer here
+    'border-2 flex flex-col items-center justify-evenly items-center rounded-md w-[83px] h-[69px] cursor-pointer min-w-[83px]',  // Added cursor-pointer here
     {
         variants: {
             variant: {
