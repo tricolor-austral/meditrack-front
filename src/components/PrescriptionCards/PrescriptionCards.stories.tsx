@@ -19,12 +19,8 @@ const meta = {
   },
   args: {
     variant: 'onDate',
-    children: (
-      <>
-        <Title order="h2">24/08/2025</Title>
-        <Title order="h2">Paracetamol</Title>
-      </>
-    ),
+    medication: 'Paracetamol',
+    date: '24/08/2025',
   },
 };
 

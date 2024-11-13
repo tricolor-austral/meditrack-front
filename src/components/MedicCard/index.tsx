@@ -24,8 +24,8 @@ export const MedicCard: React.FC<MedicCardProps> = ({
           <Avatar alt={name} src={imgSrc} />
           <Title order="h2">{name}</Title>
         </div>
-        <div className="flex gap-2">
-          <Icon variant="star" color="warn" size="small" />
+        <div className="flex gap-2 items-center">
+          <Icon variant="star" color="text-yellow" size="small" />
           <Title order="h2">{rating}</Title>
         </div>
       </div>

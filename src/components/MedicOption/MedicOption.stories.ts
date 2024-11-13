@@ -1,5 +1,6 @@
 import { MedicOption } from './index.tsx';
 import { StoryObj } from '@storybook/react';
+import d2 from '../../assets/doctors/d2.svg';
 
 const meta = {
     title: 'Components/MedicOption',
@@ -12,7 +13,7 @@ const meta = {
     },
     args: {
         name: 'Dr. John Doe',
-        imgSrc: 'https://randomuser.me/api/portraits',
+        imgSrc: d2,
         specialty: 'Nutritionist',
     },
 };
@@ -24,7 +25,7 @@ type Story = StoryObj<typeof MedicOption>;
 export const Default: Story = {
     args: {
         name: 'Dr. John Doe',
-        imgSrc: 'https://randomuser.me/api/portraits',
+        imgSrc: d2,
         specialty: 'Nutritionist',
     },
 };
