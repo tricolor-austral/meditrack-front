@@ -52,6 +52,9 @@ const meta = {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' },
     },
+    color: {
+      control: { type: 'color' }
+    }
   },
 };
 

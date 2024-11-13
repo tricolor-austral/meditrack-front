@@ -122,10 +122,12 @@ export const Icon: React.FC<IconProps> = ({
   }
 
   return (
-    <IconComponent
-      className={`${iconStyles({ size })} ${color} ${className}`}
-      onClick={onClick}
-    />
+      <div style={{color: color}}>
+        <IconComponent
+          className={`${iconStyles({ size })} ${color} ${className}`}
+          onClick={onClick}
+        />
+      </div>
   );
 };
 
